@@ -10,7 +10,7 @@ Sumeja Cerkezi
 
 
 
-![Alt text](https://github.com/sarabaq/WIFI-vattenkokare/edit/master/images.jpg?raw=true "Setup")
+![Alt text](https://github.com/sarabaq/WIFI-vattenkokare/blob/master/image.jpg?raw=true "Setup")
 
 
 
