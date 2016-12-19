@@ -1,5 +1,4 @@
 # WIFI-vattenkokare
-My first repository on GitHub
 
 
 medlemar: 
