@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>kokavatten</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style>
+			body{
+				padding-top: 30px;
+				background-image: url(https://i.ytimg.com/vi/4MFBER-ZrrU/maxresdefault.jpg);
+				background-repeat: no-repeat;
+    			background-attachment: fixed;
+    			background-position: center; 
+
+			}
+
+		h1 {
+			/*text-align: center;*/
+      color: #ed871a; 
+			font-family: Georgia ;
+			font-size: 60px;
+			padding-top: 100px;
+			padding-bottom: 20px;
+			/*padding-right: 60px;*/
+			padding-left: 40px;
+			font-style: italic;
+			text-shadow: 2px 2px #FF0000;
+		}
+
+		p {
+			color: #ffff00;
+			padding-left: 50px;
+			font-size: 20px;
+			padding-top: 20px;
+		}
+
+		.switch {
+      position: relative;
+      display: block;
+      vertical-align: top;
+      width: 150px;
+      height: 30px;
+      padding: 3px;
+      padding-left: 50px;
+      margin: 0 10px 10px 0;
+     /* background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+      background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+      box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);*/
+      cursor: pointer;
+      border-radius: 18px;
+    }
+    .switch-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      padding-left: 50px;
+    }
+    .switch-label {
+      position: relative;
+      display: block;
+      height: inherit;
+      font-size: 10px;
+
+      padding-left: 50px;
+      text-transform: uppercase;
+      background: #eceeef;
+      border-radius: inherit;
+      /*box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);*/
+    }
+    .switch-label:before, .switch-label:after {
+      position: absolute;
+      top: 50%;
+      margin-top: -.5em;
+      line-height: 1;
+      -webkit-transition: inherit;
+      -moz-transition: inherit;
+      -o-transition: inherit;
+      transition: inherit;
+      padding-left: 50px;
+    }
+    .switch-label:before {
+      content: attr(data-off);
+      right: 15px;
+      color: #e6b800;
+      padding-left: 50px;
+      text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+    }
+    .switch-label:after {
+      content: attr(data-on);
+      left: 15px;
+      color: #FFFFFF;
+      padding-left: 50px;
+      text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+    }
+    .switch-input:checked ~ .switch-label {
+      background: #E1B42B;
+      /*box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);*/
+       padding-left: 50px;
+    }
+    .switch-input:checked ~ .switch-label:before {
+      opacity: 0;
+       padding-left: 50px;
+    }
+    .switch-input:checked ~ .switch-label:after {
+      opacity: 1;
+       padding-left: 50px;
+    }
+    .switch-handle {
+      position: absolute;
+      top: 4px;
+      left: 50px;
+      width: 28px;
+      height: 28px;
+       /*padding-left: 50px;*/
+      background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+      background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+      border-radius: 100%;
+      /*box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);*/
+    }
+    .switch-handle:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -6px 0 0 -6px;
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+      background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+      border-radius: 6px;
+      /*box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);*/
+    }
+    .switch-input:checked ~ .switch-handle {
+      left: 74px;
+      /*box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);*/
+    }
+    
+    .switch-label, .switch-handle {
+      transition: All 0.3s ease;
+      -webkit-transition: All 0.3s ease;
+      -moz-transition: All 0.3s ease;
+      -o-transition: All 0.3s ease;
+    }
+
+
+		</style>
+	</head>
+	<body>
+	<h1>wifi vattenkokare </h1>
+
+	<p>tryck på
+	<a href="10.0.0.172">
+	<label class="switch">
+      <input class="switch-input" type="checkbox" />
+      <span class="switch-label" data-on="On" data-off="Off"></span> 
+      <span class="switch-handle"></span> 
+      </label>
+      </a>
+      </p>
+
+
+
+	<p>GPIO0 
+	<a href="10.0.0.172/pin=ON0"><button>ON</button></a>&nbsp;
+	<a href="10.0.0.172/pin=OFF0"><button>OFF</button></a></p>
+
+   
+
+     	
+     <script type="text/javascript" src="jquery.min.js"></script>
+     <script type="text/javascript">
+     	function gpioOn(){
+     			console.log("Hej Gruppen");
+			$.ajax({
+	 				type: "POST",
+	 				crossDomain: true,
+	 				 url: "10.0.0.172?pin=ON0",
+	  				data: "",
+	  				dataType: "json",
+	  			success : function(data){
+	  					console.log("done: " , data);
+	  				}
+	});
+     	};
+
+     </script>
+     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</body>
+</html>
