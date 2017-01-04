@@ -4,49 +4,22 @@
 		<title>kokavatten</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		
 	</head>
-	<body>
+<body>
 	<h1>wifi vattenkokare </h1>
-
 	<p>tryck på
-	<a href="10.0.0.172">
 	<label class="switch">
-      <input class="switch-input" type="checkbox" />
-      <span class="switch-label" data-on="On" data-off="Off"></span> 
+      <input class="switch-input" type="checkbox" onclick="handleCooking()" />
+      <span class="switch-label" id="off" data-on="On" data-off="Off"></span> 
       <span class="switch-handle"></span> 
-      </label>
-      </a>
-      </p>
-
-
-
-	<p>GPIO0 
-	<a href="10.0.0.172/pin=ON0"><button>ON</button></a>&nbsp;
-	<a href="10.0.0.172/pin=OFF0"><button>OFF</button></a></p>
-
-   
+    </label>
+    </p>
 
      	
-     <script type="text/javascript" src="jquery.min.js"></script>
-     <script type="text/javascript">
-     	function gpioOn(){
-     			console.log("Hej Gruppen");
-			$.ajax({
-	 				type: "POST",
-	 				crossDomain: true,
-	 				 url: "10.0.0.172?pin=ON0",
-	  				data: "",
-	  				dataType: "json",
-	  			success : function(data){
-	  					console.log("done: " , data);
-	  				}
-	});
-     	};
-
-     </script>
-     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
